@@ -1,0 +1,76 @@
+
+
+use World ;
+
+
+Q1: What is the country code of the country with name 'Canada'? 
+
+
+Q2: Find the name and population of the country with code "ALB"?
+
+
+Q3: Find official languages of Bolivia, the code of Boliviais "BOL"?
+	
+
+Q4:Find the name and population of the countries of "Africa" with population more than 60000000?
+
+
+Q5: How many different languages are spoken in Australia, the code of Australia is AUS?
+
+
+Q6: How many different languages are spoken in Canada?
+
+
+Q7: Find the name and the population of the capital of the country with code "LKA"?
+
+
+Q8: Find the number of countries in the world?
+
+
+Q9: For each continent, find the number of countries and the average population?
+
+
+Q10: Find how many countries have "English" as their official language? 
+The schema of the result should be (numofcountries).
+
+
+Q11: What is the country with the largest number of spoken languages?
+
+`Continent` enum('Asia','Europe','North America','Africa','Oceania','Antarctica','South America') NOT NULL DEFAULT 'Asia',
+
+Q12: List all countries in Europe, Oceania, and Antarctica, sorted by continent?
+
+
+Q13: What is the second most popular language spoken in Italy?
+
+
+Q14: Find the most popular official languages in the world. 
+
+
+Q15: Find the languages that are spoken by most people in the world 
+along with the number of speakers.
+Report only the languages that are spoken by more than 50M people in a descending order of popularity?
+The schema of the result should be (countrylanguage, numofpeople).
+
+
+Q16: List the names of all countries where German is spoken as an official language 
+and the percentage of use of this language?
+
+
+Q17: List the countries whose names start with either A or B?
+
+
+Q18: Display countries names with number of non-official languages. 
+
+
+Q19: Display countries names, cities names, along with their official language?
+
+
+Q20: Which countries have the densest population (population divided by surface area)? 
+Show the densest at the top.
+
+	
+
+
+
+	 
