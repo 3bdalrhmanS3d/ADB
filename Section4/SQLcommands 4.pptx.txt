@@ -1,0 +1,74 @@
+SQL Commands
+
+Stored Procedure
+When you use MySQL Workbench or mysql shell to issue the query to MySQL Server, MySQL processes the query and returns the result set. 
+If you want to save this query on the database server for execution later, one way to do it is to use a stored procedure.
+A stored procedure is a collection of pre-compiled SQL statements that you can save, so the code can be reused over and over again.
+You can also pass parameters to a stored procedure, so that the stored procedure can act based on the parameter value(s) that is passed.
+
+
+
+
+
+Stored Procedure
+ CREATE PROCEDURE sp_name(parameter_list)
+ BEGIN 
+   statements;
+ END
+
+To execute a stored procedure, you use the CALL statement:      
+call sp_name();
+
+
+Stored Procedure
+A MySQL client program such as MySQL Workbench or mysql program uses the delimiter (;) to separate statements and execute each separately.
+
+If you use a MySQL client program to define a stored procedure that contains the semicolon, the MySQL client program will not treat the whole stored procedure as a single statement, but many statements, Therefore, you must redefine the delimiter temporarily so that you can pass the whole stored procedure to the server as a single statement.
+
+To redefine the default delimiter, you use the DELIMITER command.
+
+Stored Procedure
+DELIMITER $$
+
+ CREATE PROCEDURE sp_name(parameter_list)
+ BEGIN 
+    statement1;
+    statement2;
+    statement3;
+ END $$
+ 
+DELIMITER ;
+
+Stored Procedure Parameters
+A parameter in a stored procedure has one of three modes: 
+IN  parameter 
+is the default mode. When you define an IN parameter in a stored procedure, the calling program has to pass an argument to the stored procedure, In addition, the value of an IN parameter is protected.,the stored procedure only works on the copy of the IN parameter.
+OUT parameter
+The value of an OUT parameter can be changed inside the stored procedure and its new value is passed back to the calling program.
+INOUT  parameter
+is a combination of IN and OUT parameters. It means that the calling program may pass the argument, and the stored procedure can modify the INOUT parameter, and pass the new value back to the calling program.
+
+Trigger
+It is a special type of stored procedure that is invoked automatically in response to an event. 
+
+Each trigger is associated with a table, which is activated on any DML statement such as INSERT, UPDATE, or DELETE.
+
+CREATE TRIGGER trigger_name
+{BEFORE | AFTER} {INSERT | UPDATE| DELETE } 
+ON table_name FOR EACH ROW 
+trigger_body
+
+Trigger
+The trigger body can access the values of the column being affected by the DML statement.
+To distinguish between the value of the columns BEFORE and AFTER the DML has fired, you use the NEW and OLD modifiers.
+
+
+ Types of Triggers in MySQL
+
+We can define the maximum six types of actions or events in the form of triggers:
+Before Insert: It is activated before the insertion of data into the table.
+After Insert: It is activated after the insertion of data into the table.
+Before Update: It is activated before the update of data in the table.
+After Update: It is activated after the update of the data in the table.
+Before Delete: It is activated before the data is removed from the table.
+After Delete: It is activated after the deletion of data from the table.
