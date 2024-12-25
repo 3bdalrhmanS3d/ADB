@@ -1,0 +1,151 @@
+download Appserve:
+https://www.youtube.com/watch?v=jczx_0L1PaQ
+https://www.appserv.org/en/download/
+
+###############################################################################################
+
+create database University
+
+drop database University
+
+
+create database University
+
+use University
+
+
+create table Student
+(
+ID int,
+Name varchar(15),
+City varchar(10)
+)
+
+drop table Student
+
+
+create table Student
+(
+ID int primary key auto_increment,
+Name varchar(15) not null,
+City varchar(10) default 'Asyut'
+)
+
+
+
+insert into Student (ID,Name) values (1,'Reham')
+
+insert into Student values (2,'Ahmed','Alex')
+
+insert into Student values (3,'Mohammed','Alex'),
+(4,'Mona','Cairo');
+
+
+select * from Student
+
+
+
+alter table Student add column Age int;
+
+update Student set Age=25; 
+update Student set Age=27 where City ='Alex';
+
+delete from Student where Name = 'Mona' ;
+
+
+###############################################################################################
+
+
+CREATE DATABASE Store;
+Use Store;
+
+
+create table Product
+(
+Name CHAR(30),
+Price float,
+Category CHAR(30),
+Manufacturer CHAR(30)
+)
+
+insert into Product values ('Gizmo',19.99,'Gadgets','GizmoWorks'),
+('Powergizmo',29.99,'Gadgets','GizmoWorks'),
+('SingleTouch',149.99,'Photography','Canon'),
+('MultiTouch',203.99,'Household','Hitachi')
+
+
+SELECT * 
+FROM Product 
+WHERE Category='Gadgets'
+
+
+select Name,Price,Manufacturer 
+from Product 
+where Price>100
+
+
+select Category
+from Product
+
+select Distinct Category
+from Product
+
+
+SELECT Name, price, manufacturer
+FROM Product
+WHERE Price > 50
+ORDER BY  Price, Name
+
+
+
+SELECT DISTINCT category
+FROM Product
+ORDER BY category
+
+
+SELECT Category
+FROM Product
+ORDER BY Name
+
+SELECT DISTINCT category
+FROM Product
+ORDER BY Name
+
+
+###############################################################################################
+
+
+
+create table Purchase
+(
+Product CHAR(30),
+Date Date,
+price float ,
+Quantity int
+)
+
+insert into Purchase values ('Bagel','2022/10/21',1,20),
+('Banana','2022/10/3',0.5,10),
+('Banana','2022/10/10',1,10),
+('Bagel','2022/10/25',1.5,20)
+
+SELECT Sum(price * quantity)
+FROM Purchase
+WHERE product = 'bagel'
+
+SELECT product, Sum(price*quantity) AS TotalSales
+FROM Purchase
+WHERE date > '2022/10/1'
+GROUP BY  product
+
+
+SELECT product, sum(price * quantity) AS SumSales, max(quantity) AS MaxQuantity
+FROM Purchase
+GROUP BY product
+
+
+SELECT product, Sum(price * quantity)
+FROM Purchase
+WHERE date > '2022/10/1'
+GROUP BY product
+HAVING Sum(quantity) > 30

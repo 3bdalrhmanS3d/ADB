@@ -1,0 +1,57 @@
+// to create Db
+Create Database dbname ;
+
+// use db
+use dbname
+
+// to drop ? 
+Drop Database dbname ;
+
+// Create tables with limitations:
+    Examples of creating tables using limitations such as:
+    NOT NULL: Empty values are not allowed.
+    UNIQUE: All values must be unique.
+    PRIMARY KEY: Combines NOT NULL and UNIQUE.
+    FOREIGN KEY: Connects tables.
+    CHECK: To check certain conditions.
+    DEFAULT: To determine default values.
+
+// to insert
+insert INTO table_name (col1, col2, ...) values (val1, val2, ...) 
+
+
+// to update 
+update table_name
+SET column1 = value 
+Where condition ;
+
+// to delete
+DELETE FROM table_name WHERE condition;
+
+// select 
+select attribute
+From table_name
+Where condition ;
+
+-- to all attributes 
+    SELECT * FROM Product;
+-- to select col1
+    select col1, col2 from table_name WHERE condition ; 
+
+    SELECT Name, Price FROM Product WHERE Price > 100;
+
+// 
+
+GROUP BY is used to assemble rows according to certain values.
+HAVING is used to set conditions on groups.
+
+- count()
+- sum()
+- AVG()
+- MIN() 
+- MAX()
+
+ORDER BY لترتيب النتائج.
+DISTINCT لإزالة القيم المكررة.
+
+
