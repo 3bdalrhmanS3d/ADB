@@ -14,7 +14,7 @@
         if($result == true)
         {
             echo "New record created suc" ;
-            header('Location view-student.php');
+            header('Location: view-student.php');
 
         }
         else{
